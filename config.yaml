@@ -1,0 +1,10 @@
+ingress:
+  enabled: true
+  annotations:
+    dev.okteto.com/private: "true"
+
+configMap: |
+  web:
+    enable: true
+    title: Verdaccio
+
