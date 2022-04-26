@@ -2,6 +2,7 @@ ingress:
   enabled: true
   annotations:
     dev.okteto.com/private: "true"
+    dev.okteto.com/generate-host: "true"
 
 configMap: |
   web:
