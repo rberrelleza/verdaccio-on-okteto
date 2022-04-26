@@ -1,0 +1,25 @@
+name: verdaccio-on-okteto
+
+# The build section defines how to build the images of your development environment
+# More info: https://www.okteto.com/docs/reference/manifest/#build
+build:
+  app:
+    context: .
+    dockerfile: Dockerfile
+
+# The deploy section defines how to deploy your development environment
+# More info: https://www.okteto.com/docs/reference/manifest/#deploy
+deploy:
+  compose: docker-compose.yaml
+
+# The dev section defines how to activate a development container
+# More info: https://www.okteto.com/docs/reference/manifest/#dev
+dev:
+  app:
+    command: bash
+    workdir: /usr/src/app
+    sync:
+      - .:/usr/src/app
+    forward:
+      - 9229:9229
+      - 3000:3000
