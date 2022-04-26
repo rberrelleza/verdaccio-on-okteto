@@ -1,0 +1,3 @@
+deploy:
+- helm repo add verdaccio https://charts.verdaccio.org
+- helm upgrade --install --name npm verdaccio/verdaccio --values config.yaml
